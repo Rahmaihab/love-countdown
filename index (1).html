@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>20 Days of Love 💌</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://drive.google.com/uc?export=view&id=1Sh0XJNiqseF6u-1ZsCGTZylADbgiL12g') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+      backdrop-filter: brightness(0.9);
+    }
+    h1 {
+      color: #d14c6d;
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .message {
+      display: none;
+      margin-top: 1rem;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>20 Days of Love 💌</h1>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const messages = [
+      "You were born, and the world gained light. I'm just lucky enough to witness it.",
+      "Loving you feels like breathing — quiet, deep, and absolutely necessary.",
+      "I don’t need a calendar to know something special is coming — it’s you.",
+      "Your smile is the melody that plays softly in the background of my days.",
+      "You’re not just a wish come true — you’re the whole sky answering me.",
+      "When you exist, every day feels like a celebration.",
+      "I wrote your name in my heart where no one else could ever erase it.",
+      "Some people make the world better just by being in it — you’re proof.",
+      "Every day with you is my favorite. But one day soon will be even more.",
+      "You came into the world — and my world began.",
+      "Your laugh is my favorite sound. Your happiness is my favorite view.",
+      "Some moments are made of quiet magic. Yours is coming.",
+      "You're the poem I never dared to write, now living in my silence.",
+      "If I had one gift to give you, it would be seeing yourself through my eyes.",
+      "You're more than a date on the calendar. You're a reason to believe in love again.",
+      "Your soul was made of softness and fire — both, burning in my memory.",
+      "Your presence brings color to my grayscale days.",
+      "I don't count the days — I count the feelings. And they all lead to you.",
+      "You're the calm to my chaos, and the thunder in my quiet.",
+      "Today isn’t just your birthday — it’s the day my heart silently celebrates the moment the world got you. You make every ordinary day feel like a gift, so today, let me return just a little of that magic to you. Happy Birthday, my love. I’m so thankful you exist."
+    ];
+
+    const grid = document.getElementById("grid");
+
+    messages.forEach((msg, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <strong>Message ${i + 1}</strong>
+        <div class="message" id="msg${i}">${msg}</div>
+      `;
+      card.onclick = () => {
+        const m = document.getElementById(`msg${i}`);
+        m.style.display = m.style.display === "block" ? "none" : "block";
+      };
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
